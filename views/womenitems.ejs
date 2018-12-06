@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+
+<br>
+<br>
+<br>
+<div class="ui four cards">
+    <% womenitems.forEach(function(women){ %>
+    <div class="card">
+      <div class="image">
+        <img src="<%= women.image %>">
+      </div>
+      <div class="middle aligned content">
+          <a class="header" href="/women/<%= women._id %>"><%= women.name %></a>
+        <i class="like icon active"></i>
+        <div class="meta">  
+             <h3><%= women.price %></h3>
+        </div> 
+      </div>
+    </div>
+    <% }); %>
+    </div>

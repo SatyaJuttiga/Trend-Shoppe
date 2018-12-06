@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+
+<br>
+<br>
+<br>
+<div class="ui four cards">
+    <% menitems.forEach(function(men){ %>
+    <div class="card">
+      <div class="image">
+        <img src="<%= men.image %>">
+      </div>
+      <div class="middle aligned content">
+          <a class="header" href="/men/<%= men._id %>"><%= men.name %></a>
+        <i class="like icon active"></i>
+        <div class="meta">  
+             <h3><%= men.price %></h3>
+        </div> 
+      </div>
+    </div>
+    <% }); %>
+    </div>

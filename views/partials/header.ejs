@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Trend-Shoppe</title>
+        <link   rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css'>
+        <link rel='stylesheet' type="text/css" href='/stylesheets/main.css'>
+    </head>
+    <body>
+        <div class='ui fixed inverted menu'>
+            <div class="ui container">
+                <div class='header item'>Trend-Shoppe</div>
+                <a href='http://localhost:8080/home' class="item">Home</a>
+            <a href='http://localhost:8080/men' class="item">Men </a>
+            <a href='http://localhost:8080/women' class="item">Women </a>
+            </div>
+            <% if(!currentUser){ %>
+                <button  class="ui inverted grey button" onclick="location.href='http://localhost:8080/login';" type="button"> Login</button>                
+                        <button class="ui inverted grey button" onclick="location.href='http://localhost:8080/signup';" type="button"> Signup </button>               
+            <% } else { %>
+                <div class="ui animated fade button" tabindex="0">
+                    <div class="visible content">Logout</div>
+                    <div class="hidden content">
+                        Logout
+                    </div>
+                </div>
+            <% } %>                          
+        </div>
+    

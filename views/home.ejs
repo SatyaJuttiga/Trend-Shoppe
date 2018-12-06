@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+<br>
+<br>
+<br>
+<div class="ui four cards">
+    <% allitems.forEach(function(item){ %>
+    <div class="card">
+      <div class="image">
+        <img src="<%= item.image %>">
+      </div>
+      <div class="middle aligned content">
+          <a class="header" href="/home/<%= item._id %>"><%= item.name %></a>
+        <i class="like icon active"></i>
+        <div class="meta">  
+             <h3><%= item.price %></h3>
+        </div> 
+      </div>
+    </div>
+    <% }); %>
+    </div>
+
+<% include ./partials/footer %>

@@ -1,0 +1,53 @@
+<% include ./partials/header %>
+
+<br>
+<br>
+<div class=" ui container">
+<div class="ui attached stackable menu">
+<div class="ui container">
+<div class="card">
+        <div class="image">
+          <img src="<%= women.image %>">
+        </div>
+            <div class="middle aligned content">
+          <a class="header" href="/women/<%= women._id %>"><%= women.name %></a>
+          <i class="favorite icon active"></i>
+          <div class="meta">  
+               <h3><%= women.price %></h3>
+          </div> 
+        </div>
+        <form action="/charge" method="POST">
+          <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_0ljASrY5yzjJoealTpHgHsrr"
+            data-amount="<%= women.price %>"
+            data-name="<%= women.name %>"
+            data-description="Trend-Shoppe"
+            data-locale="auto">
+          </script>
+          <script>
+            document.getElementsByClassName('stripe-button-el')[0]
+            .style.display='none';
+          </script>
+          <button type="submit" class="ui primary button">Purchase for <%= women.price %> </button>
+          </form>
+</div>
+</div>
+</div>
+  
+<div class="container">
+<div class="ui comments">
+    <div class="comment">
+        <form class="ui reply form">
+          <div class="field">
+            <textarea></textarea>
+          </div>
+          <div class="ui primary submit labeled icon button">
+            <i class="icon edit"></i> Add Comment
+          </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+<% include ./partials/footer %>
