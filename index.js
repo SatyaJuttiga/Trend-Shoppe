@@ -13,11 +13,9 @@ var app=express();
 
 seedDB();
 
-
 const port = process.env.PORT || 8080;
 
 var indexRoutes=require('./routes/index');
-
 
 //mongoose.connect('mongodb://localhost/trend');
 
@@ -52,8 +50,6 @@ mongoose.connect(config.mongodb.dbURI,() => {
 app.listen(port,()=>{
     console.log('server started on port' + port);
 });
-
-
 
 /*
 <marquee style="width:700px"> 

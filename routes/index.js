@@ -5,6 +5,7 @@ var express=require('express'),
     Men=require('../models/menitem'),
     Women=require('../models/womenitem');
     const keys = require('../config/keys');
+    const config=require('../config/config');
 
  const stripe=require('stripe')(keys.stripeSecretKey);
 
@@ -42,7 +43,8 @@ router.get('/men',function(req,res){
         }else{
             res.render('menitems',{menitems:menitems});
         }
-    });
+     });
+     //res.send('haiiii');
 });
 
 router.get('/men/:id',function(req,res){
